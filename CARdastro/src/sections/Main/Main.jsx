@@ -26,7 +26,7 @@ export const Main = () => {
 
   const [name, setName] = useState('')
   const [carValue, setCarValue] = useState('')
-  const [carType, setCarType] = useState('Chevrolet')
+  const [carType, setCarType] = useState('Marca')
   const [listOfCars, setListOfCars] = useState([carList])
 
   const handleValueChange = (e) => {
@@ -53,24 +53,28 @@ export const Main = () => {
               return (
               <Flex key={index}>
                 {item.carList.push({name: name, brandCar: carType, value: carValue})}
+                {setListOfCars(listOfCars)}
               </Flex>
               )
             }
           })}
         </Flex>
+        setCarType('Marca');
+        setName('');
+        setCarValue('');
     }
   }
 
   return (
     <Flex flexDir='column' pt='20px' align='center' w='100%' h='100vh' bgColor='#EEE'>
-      <Button bgColor='#1D3557' onClick={onOpen} _hover={{ opacity: 0.4 }} color='#fff' mb='20px'>Vender Carro</Button>
+      <Button bgColor='#24282D' onClick={onOpen} _hover={{ opacity: 0.4 }} color='#fff' mb='20px'>Vender Carro</Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}
       >
         <ModalOverlay />
         <ModalContent alignSelf='center'>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>Dados do carro:</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
@@ -112,12 +116,12 @@ export const Main = () => {
             gap='20px'
             w='1000px'
             flexDir='column'
-            bgColor='#CCC'
+            bgColor='#24282D'
             p='10px'
             borderRadius='10px'
             key={index}>
             {item.carList.map((item, index) => (
-              <Flex borderRadius='5px' p='15px' bgColor='#ffffff' justify='space-between' key={index} align='center' m='10px'>
+              <Flex borderRadius='5px' p='15px' bgColor='#ccc' justify='space-between' color='#000' key={index} align='center' m='10px'>
                 <Flex justify='center' align='center'>
                   <Text fontSize='17px'>Nome: {item.name}</Text>
                 </Flex>
