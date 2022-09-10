@@ -1,0 +1,39 @@
+{
+    "carList": [{
+
+        "id": 1,
+        "name": "Marcelo Bracet",
+        "brandCar": "Mercedes",
+        "value": "200750.870",
+        "url": "https://cdn.freebiesupply.com/logos/large/2x/chevrolet-4-logo-png-transparent.png"
+    },
+    {
+        "id": 2,
+        "name": "Ricardo Moreno Pasquin",
+        "brandCar": "Jeep",
+        "value": "130749.580",
+        "url": "https://www.freesvgdownload.com/wp-content/uploads/2021/09/jeep.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sara dos Santos Almeida",
+        "brandCar": "Range Rover",
+        "value": "860720.540",
+        "url": "https://logojinni.com/image/logos/range%20rover-693.svg"
+    },
+    {
+        "id": 4,
+        "name": "Cesar Augusto Bracet",
+        "brandCar": "Citroen",
+        "value": "120750.870",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Citroen_2016_logo.svg/1280px-Citroen_2016_logo.svg.png"
+    },
+    {
+        "id": 5,
+        "name": "Simone de Fátima Coutinho Alexandre",
+        "brandCar": "Jeep",
+        "value": "130670.450",
+        "url": "https://www.freesvgdownload.com/wp-content/uploads/2021/09/jeep.jpg"
+    }
+    ]
+}
