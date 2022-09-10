@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { formatValue } from '../../helpers/formatValue'
+import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import {
   Modal,
   ModalOverlay,
@@ -43,8 +44,25 @@ export const Main = () => {
     setCarType(carType);
   }
 
+  const pushListItem = () => {
+    {
+      carValue, name, carType &&
+        <Flex>
+          {listOfCars.map((item, index) => {
+            {
+              return (
+              <Flex key={index}>
+                {item.carList.push({name: name, brandCar: carType, value: carValue})}
+              </Flex>
+              )
+            }
+          })}
+        </Flex>
+    }
+  }
+
   return (
-    <Flex flexDir='column' pt='20px' align='center' w='100%' h='80vh' bgColor='#EEE'>
+    <Flex flexDir='column' pt='20px' align='center' w='100%' h='100vh' bgColor='#EEE'>
       <Button bgColor='#1D3557' onClick={onOpen} _hover={{ opacity: 0.4 }} color='#fff' mb='20px'>Vender Carro</Button>
       <Modal
         isOpen={isOpen}
@@ -81,7 +99,7 @@ export const Main = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button onClick={pushListItem} colorScheme='blue' mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -100,9 +118,17 @@ export const Main = () => {
             key={index}>
             {item.carList.map((item, index) => (
               <Flex borderRadius='5px' p='15px' bgColor='#ffffff' justify='space-between' key={index} align='center' m='10px'>
-                <Text>Nome: {item.name}</Text>
-                <Text>Marca: {item.brandCar}</Text>
-                <Text fontWeight='bold'>Valor da compra: {formatValue(parseFloat(item.value))}</Text>
+                <Flex justify='center' align='center'>
+                  <Text fontSize='17px'>Nome: {item.name}</Text>
+                </Flex>
+                <Flex justify='center' align='center'>
+                  <Text fontSize='17px' align='center'>Marca: {item.brandCar}</Text>
+                </Flex>
+                <Flex justify='center' align='center'>
+                  <Text fontSize='17px' fontWeight='bold'>Valor da compra: {formatValue(parseFloat(item.value))}</Text>
+                </Flex>
+                <Button><EditIcon /></Button>
+                <Button><DeleteIcon /></Button>
               </Flex>
             ))}
           </Flex>

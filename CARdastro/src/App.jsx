@@ -8,7 +8,6 @@ export default function App(){
     <Flex flexDir='column'>
       <Header/>
       <Main/>
-      <Footer/>
     </Flex>
   )
 }
