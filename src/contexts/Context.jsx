@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 const initialState = {
     nome: 'Marcelo',
-    idade: 20
+    age: 20
 }
 
 export const Context = createContext(initialState);

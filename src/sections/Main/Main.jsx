@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { formatValue } from '../../helpers/formatValue'
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import {
@@ -21,6 +21,11 @@ import {
 import carList from '../../carList/carList.json'
 
 export const Main = () => {
+  
+useEffect(() => {
+
+}, [])
+
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -62,6 +67,7 @@ export const Main = () => {
         setCarType('Marca');
         setName('');
         setCarValue('');
+        onClose();
     }
   }
 
